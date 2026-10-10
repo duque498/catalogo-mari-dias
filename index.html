@@ -23,8 +23,8 @@ button,input,textarea{font:inherit;color:inherit}
 :focus-visible{outline:3px solid var(--vinho);outline-offset:2px}
 
 header{text-align:center;padding-block:20px 8px}
-body>header{padding-top:4px}
-.marca{max-width:520px;margin:0 auto}
+body>header{padding-top:0}
+.marca{max-width:520px;margin:-3px auto 0}
 .marca img{display:block;width:100%;height:auto;mix-blend-mode:multiply}
 .marca h1{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;margin:0}
 header p{margin:18px auto 0;max-width:46ch;color:var(--oliva-suave)}
@@ -36,7 +36,7 @@ nav a:hover{background:var(--vinho);color:var(--retalho);border-color:var(--vinh
 
 header .sobre{color:var(--oliva);max-width:52ch;font-size:17px}
 header .sobre+.sobre{margin-top:10px}
-.marca+.sobre{margin-top:clamp(0px,1vw,6px)}
+.marca+.sobre{margin-top:-6px}
 section{padding-block:28px 8px;scroll-margin-top:60px}
 section h2{font:400 clamp(26px,5vw,34px)/1.15 var(--titulo);margin:0;color:var(--vinho-escuro);text-wrap:balance}
 section .desc{margin:6px 0 16px;max-width:60ch}
