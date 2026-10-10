@@ -26,7 +26,7 @@ header{text-align:center;padding-block:20px 8px}
 .marca{position:relative;max-width:560px;margin:0 auto}
 .marca img{display:block;width:100%;mix-blend-mode:multiply;opacity:.6;-webkit-mask-image:radial-gradient(closest-side,#000 62%,transparent 100%);mask-image:radial-gradient(closest-side,#000 62%,transparent 100%)}
 .marca h1{position:relative;margin:-34% 0 0;font-weight:400;color:#2b2a22;display:flex;flex-direction:column;align-items:center;gap:6px}
-.marca h1 span{font:400 clamp(76px,21vw,140px)/.9 var(--script);white-space:nowrap}
+.marca h1 span{font:400 clamp(54px,15vw,100px)/.9 var(--script);white-space:nowrap}
 .marca h1 small{font:400 clamp(15px,4.2vw,22px)/1 var(--titulo);letter-spacing:.3em;text-transform:uppercase;color:var(--oliva);display:flex;align-items:center;gap:12px;white-space:nowrap}
 .marca h1 small::before,.marca h1 small::after{content:"";width:clamp(18px,7vw,54px);border-top:1.5px solid var(--rosa)}
 header p{margin:18px auto 0;max-width:46ch;color:var(--oliva-suave)}
@@ -41,6 +41,7 @@ section{padding-block:28px 8px;scroll-margin-top:60px}
 section h2{font:400 clamp(26px,5vw,34px)/1.15 var(--titulo);margin:0;color:var(--vinho-escuro);text-wrap:balance}
 section .desc{margin:6px 0 16px;max-width:60ch}
 section .preco{font-weight:700;color:var(--vinho)}
+.peca .preco{margin:0 6px;font-size:16px;font-variant-numeric:tabular-nums}
 
 .grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
 .grade.larga{grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
@@ -49,8 +50,8 @@ section .preco{font-weight:700;color:var(--vinho)}
 .foto{border:0;padding:0;background:none;cursor:zoom-in;border-radius:9px;overflow:hidden;display:block}
 .foto img{display:block;width:100%;aspect-ratio:1;object-fit:cover}
 .larga .foto img{aspect-ratio:4/5}
-.peca h3{font:600 15px/1.25 var(--texto);margin:0 6px;min-height:2.5em}
-.acao{margin:0 6px 6px;display:flex}
+.peca h3{font:600 15px/1.25 var(--texto);margin:0 6px}
+.acao{margin:auto 6px 6px;display:flex}
 .btn-add{flex:1;border:1.5px solid var(--vinho);background:none;color:var(--vinho);border-radius:999px;padding:8px 10px;font-weight:700;font-size:14px;cursor:pointer}
 .btn-add:hover{background:var(--vinho);color:var(--retalho)}
 .qtd{flex:1;display:flex;align-items:center;justify-content:space-between;background:var(--vinho);color:var(--retalho);border-radius:999px;font-weight:700;font-variant-numeric:tabular-nums}
@@ -116,7 +117,7 @@ const WHATSAPP = "5511986430411";
 const PRODUTOS = [
   {id:"luva", nome:"Luva de forno", preco:48, desc:"Tricoline acolchoado, resistente ao calor, com alça para pendurar.",
    estampas:[["galinhas","Galinhas d'angola"],["waffle","Morango e waffle"],["morangos","Morangos floridos"],["limao","Limão siciliano"],["laranja","Laranjas"]]},
-  {id:"kit", nome:"Kit cozinha", preco:150, larga:true, desc:"Luva de forno, cesto de pão e cobre-alimentos, tudo na mesma estampa.",
+  {id:"kit", nome:"Kit cozinha", preco:150, unidade:"o kit", larga:true, desc:"Luva de forno, cesto de pão e cobre-alimentos, tudo na mesma estampa.",
    estampas:[["laranja","Laranjas"],["waffle","Morango e waffle"]]},
   {id:"pote", nome:"Capa para potes", preco:14, desc:"Capa com elástico para potes e tigelas. Um charme na despensa e na mesa.",
    estampas:[["xadrez","Xadrez vermelho"],["limao","Limões"],["waffle","Morango e waffle"],["poa","Vermelho poá"]]},
@@ -149,11 +150,12 @@ function montar(){
   $("catalogo").innerHTML = PRODUTOS.map(p=>`
     <section id="${p.id}">
       <h2>${p.nome}</h2>
-      <p class="desc">${p.desc} <span class="preco">${p.preco!=null ? brl(p.preco)+" cada" : "Valor a combinar."}</span></p>
+      <p class="desc">${p.desc}</p>
       <div class="grade${p.larga?" larga":""}">${p.estampas.map(([e,nome])=>{const k=`${p.id}-${e}`;return `
         <article class="peca" id="peca-${k}">
           <button type="button" class="foto" data-zoom="${k}" aria-label="Ampliar foto: ${nome}"><img src="${img(k)}" alt="${p.nome}, estampa ${nome}" loading="lazy"></button>
           <h3>${nome}</h3>
+          <p class="preco">${p.preco!=null ? brl(p.preco)+(p.unidade?" "+p.unidade:"") : "Valor a combinar"}</p>
           <div class="acao" id="acao-${k}"></div>
         </article>`}).join("")}</div>
     </section>`).join("");
