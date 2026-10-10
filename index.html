@@ -23,9 +23,7 @@ button,input,textarea{font:inherit;color:inherit}
 :focus-visible{outline:3px solid var(--vinho);outline-offset:2px}
 
 header{text-align:center;padding-block:20px 8px}
-body{overflow-x:clip}
-body>header{position:relative;isolation:isolate;padding-block:clamp(16px,4vw,32px) 8px}
-body>header::before{content:"";position:absolute;z-index:-1;top:0;bottom:-28px;left:50%;width:100vw;transform:translateX(-50%);background:radial-gradient(ellipse 70% 85% at 50% 0,#f2d2d6 0,#f6e0e1 45%,transparent 100%),linear-gradient(#f6e1e2,var(--papel))}
+body>header{padding-top:4px}
 .marca{max-width:520px;margin:0 auto}
 .marca img{display:block;width:100%;height:auto;mix-blend-mode:multiply}
 .marca h1{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;margin:0}
