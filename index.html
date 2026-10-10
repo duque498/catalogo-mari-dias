@@ -85,6 +85,10 @@ input,textarea{background:var(--retalho);border:1.5px solid var(--rosa);border-r
 #zoom img{display:block;max-height:86vh;border-radius:14px}
 footer{text-align:center;padding-block:36px 12px;color:var(--oliva-suave);font-size:14px}
 footer em{font:400 30px/1 var(--script);color:var(--vinho);display:block}
+.contato{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:18px}
+.contato a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:var(--vinho);background:var(--retalho);border:1.5px solid var(--rosa);border-radius:999px;padding:10px 16px;font-weight:700;font-size:15px}
+.contato a:hover{background:var(--vinho);color:var(--retalho);border-color:var(--vinho)}
+.contato svg{width:20px;height:20px;flex:none}
 </style></head><body>
 
 <header class="wrap">
@@ -97,7 +101,12 @@ footer em{font:400 30px/1 var(--script);color:var(--vinho);display:block}
 </header>
 <nav aria-label="Produtos"><div class="wrap" id="nav"></div></nav>
 <main class="wrap" id="catalogo"></main>
-<footer class="wrap"><em>Carinho em cada ponto</em>Peças feitas à mão. As estampas podem variar conforme o tecido disponível.</footer>
+<footer class="wrap"><em>Carinho em cada ponto</em>Peças feitas à mão. As estampas podem variar conforme o tecido disponível.
+  <div class="contato">
+    <a href="https://wa.me/5511986430411" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.8 13.5L3 21l4.6-1.2A9 9 0 1 0 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8.5c.3 2.9 3.6 6.2 6.5 6.5l1-1.4-1.9-1-1 .8c-1-.5-2.2-1.6-2.6-2.6l.8-1-1-1.9Z" fill="currentColor"/></svg>WhatsApp (11) 98643-0411</a>
+    <a href="https://www.instagram.com/maridiascriativa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor"/></svg>@maridiascriativa</a>
+  </div>
+</footer>
 
 <div class="barra" id="barra" hidden><div><span id="barra-txt"></span><button type="button" id="abrir">Ver pedido</button></div></div>
 
