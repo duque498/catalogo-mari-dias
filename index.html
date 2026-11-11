@@ -93,8 +93,14 @@ input,textarea{background:var(--retalho);border:1.5px solid var(--rosa);border-r
 #zoom img{display:block;max-height:80vh;max-width:100%;margin:0 auto;border-radius:14px}
 .zoom-nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:10px;color:#fff;font-weight:700;font-variant-numeric:tabular-nums}
 .zoom-nav button{border:0;background:var(--retalho);color:var(--vinho);width:44px;height:44px;border-radius:999px;font-size:26px;line-height:1;cursor:pointer}
-.kit-aviso p{margin:22px 0 0;padding:14px 18px;text-align:center;background:var(--retalho);border:2px dashed var(--rosa);border-radius:14px;color:var(--oliva);text-wrap:balance}
+.kit-aviso>div{margin-top:22px;padding:16px 18px;text-align:center;background:var(--retalho);border:2px dashed var(--rosa);border-radius:14px;color:var(--oliva);text-wrap:balance}
+.kit-aviso p{margin:0}
+.kit-aviso .kit-t{font-size:17px;margin-bottom:4px}
 .kit-aviso strong{color:var(--vinho)}
+.kit-aviso ul{list-style:none;margin:10px 0;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.kit-aviso li{background:var(--papel);border:1.5px solid var(--rosa);border-radius:999px;padding:6px 14px;font-weight:600;font-size:14px}
+.kit-aviso a{color:var(--vinho);text-decoration:none}
+.kit-aviso a:hover{text-decoration:underline}
 footer{text-align:center;padding-block:36px 12px;color:var(--oliva-suave);font-size:14px}
 footer em{font:400 30px/1 var(--script);color:var(--vinho);display:block}
 .contato{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:18px}
@@ -113,7 +119,16 @@ footer em{font:400 30px/1 var(--script);color:var(--vinho);display:block}
   </div>
 </header>
 <nav aria-label="Produtos"><div class="wrap" id="nav"></div></nav>
-<aside class="wrap kit-aviso"><p><strong>Monte seu kit com suas peças favoritas!&nbsp;💕</strong> Escolha as peças e estampas que mais gosta, junte tudo no pedido e envie pelo WhatsApp.</p></aside>
+<aside class="wrap kit-aviso"><div>
+  <p class="kit-t"><strong>Monte seu kit com suas peças favoritas!&nbsp;💕</strong></p>
+  <p>Combine do jeito que quiser, por exemplo:</p>
+  <ul>
+    <li><a href="#necessaire">Necessaire</a> + <a href="#carteira">carteira</a></li>
+    <li><a href="#necessaire">Necessaire</a> + <a href="#talher">porta-talheres</a></li>
+    <li><a href="#carteira">Carteira</a> + <a href="#talher">porta-talheres</a></li>
+  </ul>
+  <p>Você escolhe as peças e as estampas, junta tudo no pedido e envia pelo WhatsApp.</p>
+</div></aside>
 <main class="wrap" id="catalogo"></main>
 <footer class="wrap"><em>Carinho em cada ponto</em>Peças feitas à mão. As estampas podem variar conforme o tecido disponível.
   <div class="contato">
